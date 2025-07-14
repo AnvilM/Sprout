@@ -1,0 +1,91 @@
+* {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    transition-duration: .2s;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+
+
+#clock,
+#battery,
+/* #cpu,
+#memory,
+#disk,*/
+#temperature, 
+#backlight,
+#network,
+#pulseaudio,
+/* #wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd */
+#workspaces { 
+    background-color: #141218;
+    border-radius: 100px;
+    padding: 3px 10px;
+    margin-top: 5px;
+}
+
+.modules-right > widget > *{
+    margin-right: 10px;
+}
+
+.modules-left > widget > *{
+    margin-left: 10px;
+}
+
+
+/* WORKSPACES */
+
+
+#workspaces {
+    padding: 0;
+    background-color: transparent;
+}
+
+#workspaces button {
+    padding: 0;
+    color: transparent;
+    min-width: 24px;
+    background-color: #141218;
+    border-radius: 50px;
+    transition-duration: .3s;
+    margin-right: 5px;
+    
+}
+
+#workspaces button:last-child {
+    margin-right: 0;
+}
+
+#workspaces button.active{
+    color: white;
+    min-width: 50px;
+}
+
+
+/* BATTERY */
+
+
+#battery.warning {
+    color: #ff7a3c;
+}
+
+#battery.critical {
+    color: #ff3737;
+}
+
+#battery.charging {
+    color: #63f2a5;
+}
+
+

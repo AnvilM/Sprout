@@ -1,0 +1,96 @@
+// -*- mode: jsonc -*-
+{
+    "margin-bottom": 0,
+    "modules-left": [
+        "clock"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "temperature",
+        "pulseaudio",
+        "pulseaudio#input",
+        "backlight",
+        "battery",
+        "network"
+    ],
+    "temperature": {
+        "tooltip": false
+    },
+
+    "clock": {
+        "tooltip": false
+    },
+    
+    "backlight": {
+        "tooltip": false,
+        "format": " {percent}"
+    },
+
+    "battery": {
+        "tooltip": false,
+        "states": {
+            "good": 95,
+            "warning": 20,
+            "critical": 10
+        },
+        "format-good": "{icon}  {capacity}",
+        "format-charging-good": "{icon} {capacity}",
+        "format-warning": "{icon} {capacity}",
+        "format-critical": "{icon} {capacity}",
+        "format-charging-warning": "{icon} {capacity}",
+        "format-charging-critical": "{icon} {capacity}",
+        "format-charging": "",
+        "format": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "network": {
+        "tooltip": false,
+        "format-wifi": "{icon} {essid}",
+        "format-disconnected": "",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ]
+    },
+    "pulseaudio": {
+        "tooltip": false,
+        "format": "{icon} {volume}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#input": {
+        "tooltip": false,
+        "format-source": " {volume}",
+        "format-source-muted": "",
+        "format": "{format_source}",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-"
+    },
+
+    "hyprland/workspaces": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "activate",
+        "persistent-only": true
+        
+    }
+
+}

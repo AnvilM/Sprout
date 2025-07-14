@@ -1,0 +1,50 @@
+configuration {
+    modi: "wallpaper:~/.config/rofi/wallpaper/wallpaper.sh";
+
+    show-icons: true;
+    sidebar-mode: false;
+}
+
+@theme "theme"
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+* {
+    background: transparent;
+}
+
+window {
+    width: 30%;
+    height: calc(70% - 22px);
+    border-radius: 7px;
+    background-color:rgba(20, 18, 24, 0.52);
+    spacing: 0;
+}
+
+mainbox {
+    children: [listview];
+}
+
+listview {
+    padding: 10px;
+}
+
+element {
+  orientation: vertical;
+  children: [element-icon];
+}
+
+element-icon {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    size: 33%;
+}
+
+element selected {
+    background-color:  #BC6FF1 ;
+    text-color: @foreground  ;
+    border-radius: 5px;
+}
