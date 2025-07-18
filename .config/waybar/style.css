@@ -13,10 +13,10 @@ window#waybar {
 
 #clock,
 #battery,
-/* #cpu,
-#memory,
-#disk,*/
-#temperature, 
+#cpu,
+/* #memory,
+#disk,
+#temperature, */ 
 #backlight,
 #network,
 #pulseaudio,
