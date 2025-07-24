@@ -16,7 +16,8 @@
         "network"
     ],
     "cpu": {
-        "tooltip": false
+        "tooltip": false,
+        "format": " {usage}"
     },
 
     "clock": {
