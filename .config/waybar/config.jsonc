@@ -8,15 +8,16 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "temperature",
+        "cpu",
         "pulseaudio",
         "pulseaudio#input",
         "backlight",
         "battery",
         "network"
     ],
-    "temperature": {
-        "tooltip": false
+    "cpu": {
+        "tooltip": false,
+        "format": " {usage}"
     },
 
     "clock": {
