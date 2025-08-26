@@ -1,8 +1,4 @@
 configuration {
-
-    modi: "cliphist:~/.config/rofi/cliphist/cliphist.sh";
-
-    show-icons: true;
     sidebar-mode: false;
    
     font: "JetBrains Mono 16";
@@ -57,12 +53,7 @@ listview {
 element {
     padding: 10px 5px;
     text-color: @foreground  ;
-    children: [element-index, element-text];
-}
-
-element-index {
-    text-color: @foreground;
-    margin: 0 10px 0 0;
+    children: [element-text];
 }
 
 element selected {
