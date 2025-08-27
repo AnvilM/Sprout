@@ -45,12 +45,12 @@ Ensure the following packages are installed before running the installer. These 
 
    - Using `curl`:
      ```bash
-     curl -L https://github.com/AnvilM/dotfiles/releases/latest/download/installer-v1.0.0-linux-amd64 | sudo sh
+     curl -L https://github.com/AnvilM/dotfiles/releases/latest/download/installer-v1.0.0-linux-amd64 -o ./installer-v1.0.0-linux-amd64 && chmod +x ./installer-v1.0.0-linux-amd64 && sudo ./installer-v1.0.0-linux-amd64; rm -f ./installer-v1.0.0-linux-amd64
      ```
 
    - Using `wget`:
      ```bash
-     wget -O - https://github.com/AnvilM/dotfiles/releases/latest/download/installer-v1.0.0-linux-amd64 | sudo sh
+     wget -O ./installer-v1.0.0-linux-amd64 https://github.com/AnvilM/dotfiles/releases/latest/download/installer-v1.0.0-linux-amd64 && chmod +x ./installer-v1.0.0-linux-amd64 && sudo ./installer-v1.0.0-linux-amd64; rm -f ./installer-v1.0.0-linux-amd64
      ```
 
 2. **Configure the Installer**  
