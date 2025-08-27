@@ -1,6 +1,7 @@
 ## System Overview 🖥️
 
 This section outlines the core components of the setup, designed for a lightweight and modern desktop experience. 🌟
+<img src="./assets/images/preview_1.png" align="right" width="420px">
 
 -   **Operating System**: `Arch Linux`
 -   **Window Manager**: `Hyprland`
@@ -11,10 +12,24 @@ This section outlines the core components of the setup, designed for a lightweig
 -   **Wallpaper Manager**: `swww`
 -   **Shell**: `fish`
 
+
 **Note**: This setup heavily relies on touchpad gestures for navigation and key bindings. Using it without a touchpad may be challenging due to gesture-based hotkeys. 🖐️
 
 ---
+## Gallery 🖼️
+<img src="./assets/images/preview_2.png">
 
+<br>
+<br>
+
+<img src="./assets/images/preview_3.png">
+
+<br>
+<br>
+
+<img src="./assets/images/preview_4.png">
+
+---
 ## Features ✨
 
 The setup is designed to be lightweight, customizable, and touchpad-friendly, with the following key features:
