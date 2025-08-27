@@ -1,7 +1,7 @@
 ## System Overview 🖥️
 
 This section outlines the core components of the setup, designed for a lightweight and modern desktop experience. 🌟
-<img src="./assets/images/preview_1.png" align="right" width="420px">
+<img src="./assets/images/preview_1.png" align="right" width="500px">
 
 -   **Operating System**: `Arch Linux`
 -   **Window Manager**: `Hyprland`
@@ -15,21 +15,15 @@ This section outlines the core components of the setup, designed for a lightweig
 
 **Note**: This setup heavily relies on touchpad gestures for navigation and key bindings. Using it without a touchpad may be challenging due to gesture-based hotkeys. 🖐️
 
----
 ## Gallery 🖼️
-<img src="./assets/images/preview_2.png">
 
-<br>
-<br>
+<img src="./assets/images/preview_2.png">
 
 <img src="./assets/images/preview_3.png">
 
-<br>
-<br>
-
 <img src="./assets/images/preview_4.png">
 
----
+
 ## Features ✨
 
 The setup is designed to be lightweight, customizable, and touchpad-friendly, with the following key features:
@@ -40,7 +34,7 @@ The setup is designed to be lightweight, customizable, and touchpad-friendly, wi
 -   **Extensibility**: Simple to extend and customize to fit personal workflows.
 -   **Lightweight Build**: Minimal resource usage for a smooth experience.
 
----
+
 
 ## Installation 📦
 
@@ -80,7 +74,7 @@ Ensure the following packages are installed before running the installer. These 
 
 **Important**: The installer requires `sudo` privileges. Ensure the user account has sufficient permissions, especially in a live environment.
 
----
+
 
 ## Usage 🎮
 
