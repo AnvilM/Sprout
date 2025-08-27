@@ -45,12 +45,12 @@ Ensure the following packages are installed before running the installer. These 
 
    - Using `curl`:
      ```bash
-     curl -L https://github.com/AnvilM/dotfiles/releases/latest/download/installer | sh
+     curl -L https://github.com/AnvilM/dotfiles/releases/latest/download/installer-v1.0.0-linux-amd64 | sh
      ```
 
    - Using `wget`:
      ```bash
-     wget -O - https://github.com/AnvilM/dotfiles/releases/latest/download/installer | sh
+     wget -O - https://github.com/AnvilM/dotfiles/releases/latest/download/installer-v1.0.0-linux-amd64 | sh
      ```
 
 2. **Configure the Installer**  
