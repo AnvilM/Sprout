@@ -1,9 +1,3 @@
-# Arch Linux with Hyprland Setup 🚀
-
-This README provides an overview of my custom Arch Linux setup featuring the Hyprland window manager. It includes details about the system components, features, installation process, usage instructions, and customization options. 📝
-
----
-
 ## System Overview 🖥️
 
 This section outlines the core components of the setup, designed for a lightweight and modern desktop experience. 🌟
@@ -17,7 +11,7 @@ This section outlines the core components of the setup, designed for a lightweig
 -   **Wallpaper Manager**: `swww`
 -   **Shell**: `fish`
 
-**Note**: This setup heavily relies on touchpad gestures for navigation and key bindings. Using it without a touchpad may be challenging due to gesture-based hotkeys. 🖐️`
+**Note**: This setup heavily relies on touchpad gestures for navigation and key bindings. Using it without a touchpad may be challenging due to gesture-based hotkeys. 🖐️
 
 ---
 
@@ -30,6 +24,46 @@ The setup is designed to be lightweight, customizable, and touchpad-friendly, wi
 -   **Touchpad Gesture Support**: Many hotkeys are replaced with intuitive touchpad gestures, optimized for laptops.
 -   **Extensibility**: Simple to extend and customize to fit personal workflows.
 -   **Lightweight Build**: Minimal resource usage for a smooth experience.
+
+---
+
+## Installation 📦
+
+This section provides a step-by-step guide. The installer can be used in a live Arch Linux environment or on an existing Arch Linux system. Below are the required packages and installation steps.
+
+### Required Packages
+
+Ensure the following packages are installed before running the installer. These are essential for the setup to function properly:
+
+- `sudo`: For elevated privileges during installation.
+- `curl` or `wget`: To download the installer from the repository.
+
+### Installation Steps
+
+1. **Download and Execute the Installer**  
+   The user can download and execute the installer using one of the following methods:
+
+   - Using `curl`:
+     ```bash
+     curl -L https://github.com/AnvilM/dotfiles/releases/latest/download/installer | sh
+     ```
+
+   - Using `wget`:
+     ```bash
+     wget -O - https://github.com/AnvilM/dotfiles/releases/latest/download/installer | sh
+     ```
+
+2. **Configure the Installer**  
+   During execution, the installer will prompt the user to select the desired configuration options. Choose the appropriate settings based on your preferences and system requirements.
+<br>
+3. **Verify Installation**  
+   After the installer completes, verify the setup by running the following command:
+   ```bash
+   Hyprland
+   ```
+   If the installation was successful, Hyprland should start without errors. If issues occur, check the logs in `~/.hyprland.log` for debugging.
+
+**Important**: The installer requires `sudo` privileges. Ensure the user account has sufficient permissions, especially in a live environment.
 
 ---
 
