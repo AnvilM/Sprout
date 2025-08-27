@@ -3,22 +3,25 @@ package system
 import (
 	"anvilarch/internal/utils/logger"
 	"os"
-	"time"
+	"os/exec"
 )
 
-func CheckRoot() {
-	if os.Geteuid() != 0 {
-		logger.Fatal("Permission denied: sudo privileges required.")
-		os.Exit(1)
-	}
+func CheckSudo() {
+    uid := os.Geteuid()
+    if uid != 0 {
+        logger.Fatal("Permission denied: sudo privileges required")
+    }
 }
 
-func RunCommand(name string, args ...string) error {
-	// logger.Log(logger.INFO, "run", name, args);
-	// cmd := exec.Command(name, args...)
-	// cmd.Stdout = os.Stdout
-	// cmd.Stderr = os.Stderr
-	// return cmd.Run()
-	time.Sleep(1 * time.Second)
+func RunCommand(command string) error {
+	cmd := exec.Command("bash", "-c", command)
+
+	cmd.Stdout = nil
+	cmd.Stderr = nil
+
+	if err := cmd.Run(); err != nil {
+		return err
+	}
+
 	return nil
 }

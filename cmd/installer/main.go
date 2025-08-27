@@ -1,7 +1,6 @@
 package main
 
 import (
-	"anvilarch/internal/installer/aur"
 	"anvilarch/internal/installer/base"
 	"anvilarch/internal/installer/hypr_plugins"
 	"anvilarch/internal/utils/system"
@@ -9,11 +8,10 @@ import (
 )
 
 func main() {
+	system.CheckSudo()
 
-	system.CheckRoot()
 
 	clean := tui.SelectBool("Remove build dependencies?")
-	installYay := tui.SelectBool("Install yay?")
 	
 	
 	base.InstallPackages()
@@ -22,10 +20,8 @@ func main() {
 
 	hypr_plugins.InstallPlugins(clean)
 
-	if(installYay){
-		aur.InstallYay(clean)
-	}
-
-	base.Setup()
+	// if(installYay){
+	// 	aur.InstallYay(clean)
+	// }
 
 }
