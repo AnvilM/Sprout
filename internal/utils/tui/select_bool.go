@@ -1,7 +1,7 @@
 package tui
 
 import (
-	"anvilarch/internal/utils/logger"
+	"foundryinstaller/internal/utils/logger"
 
 	"github.com/manifoldco/promptui"
 )

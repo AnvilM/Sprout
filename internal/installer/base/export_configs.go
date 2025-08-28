@@ -1,8 +1,8 @@
 package base
 
 import (
-	"anvilarch/internal/embedassets"
-	"anvilarch/internal/utils/logger"
+	"foundryinstaller/internal/embedassets"
+	"foundryinstaller/internal/utils/logger"
 )
 
 func ExportConfigs(){

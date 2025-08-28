@@ -1,10 +1,10 @@
 package main
 
 import (
-	"anvilarch/internal/installer/base"
-	"anvilarch/internal/installer/hypr_plugins"
-	"anvilarch/internal/utils/system"
-	"anvilarch/internal/utils/tui"
+	"foundryinstaller/internal/installer/base"
+	"foundryinstaller/internal/installer/hypr_plugins"
+	"foundryinstaller/internal/utils/system"
+	"foundryinstaller/internal/utils/tui"
 )
 
 func main() {

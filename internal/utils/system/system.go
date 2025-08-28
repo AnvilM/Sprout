@@ -1,7 +1,7 @@
 package system
 
 import (
-	"anvilarch/internal/utils/logger"
+	"foundryinstaller/internal/utils/logger"
 	"os"
 	"os/exec"
 )

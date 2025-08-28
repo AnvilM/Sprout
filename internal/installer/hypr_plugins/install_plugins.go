@@ -1,10 +1,10 @@
 package hypr_plugins
 
 import (
-	"anvilarch/internal/utils/logger"
-	"anvilarch/internal/utils/system"
 	_ "embed"
 	"fmt"
+	"foundryinstaller/internal/utils/logger"
+	"foundryinstaller/internal/utils/system"
 	"log"
 	"time"
 

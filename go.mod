@@ -1,4 +1,4 @@
-module anvilarch
+module foundryinstaller
 
 go 1.24.6
 
