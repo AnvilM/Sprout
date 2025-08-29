@@ -70,3 +70,6 @@ additionalUtils:
 
 assets:
   scripts:
+    - "assets/.config/rofi/wallpaper/wallpaper.sh"
+    - "assets/.config/rofi/screenshot/screenshot.sh"
+    - "assets/.config/rice/bin/screenshot"
