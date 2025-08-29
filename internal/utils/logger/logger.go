@@ -22,23 +22,45 @@ const (
 	SUCCESS
 )
 
+func FormatLog(level Level, format string, a ...interface{}) string {
+	message := fmt.Sprintf(format, a...)
+	switch level {
+	case INFO:
+		return fmt.Sprintf("%si%s %s", Blue, message, Reset)
+	case WARN:
+		return fmt.Sprintf("%s[WARN]%s %s", Yellow, message, Reset)
+	case ERROR:
+		return fmt.Sprintf("%s[ERROR]%s %s", Red, Reset, message)
+	case SUCCESS:
+		return fmt.Sprintf("%s+%s %s", Green, message, Reset)
+	default:
+		return message
+	}
+}
 
 
 func Log(level Level, format string, a ...interface{}) {
-    message := fmt.Sprintf(format, a...)
-    switch level {
-    case INFO:
-        fmt.Printf("%s[INFO]%s %s\n", Blue, Reset, message)
-    case WARN:
-        fmt.Printf("%s[WARN]%s %s\n", Yellow, Reset, message)
-    case ERROR:
-        fmt.Printf("%s[ERROR]%s %s\n", Red, Reset, message)
-	case SUCCESS: 
-		fmt.Printf("%s✔%s %s\n", Green, Reset, message)
-    }
+	fmt.Println(FormatLog(level, format, a...))
 }
 
 func Fatal(format string, a ...interface{}) {
     Log(ERROR, format, a...)
     os.Exit(1)
+}
+
+func Success(format string, a ...interface{}) {
+    fmt.Print(FormatSuccess(format, a...))
+}
+
+func FormatSuccess(format string, a ...interface{}) string{
+	return FormatLog(SUCCESS, format, a...)
+}
+
+
+func Info(format string, a ...interface{}) {
+    fmt.Print(FormatInfo( format, a...))
+}
+
+func FormatInfo( format string, a ...interface{}) string{
+	return FormatLog(INFO, format, a...)
 }

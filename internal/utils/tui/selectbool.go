@@ -1,7 +1,7 @@
 package tui
 
 import (
-	"foundryinstaller/internal/utils/logger"
+	"sprout/internal/utils/logger"
 
 	"github.com/manifoldco/promptui"
 )

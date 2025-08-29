@@ -1,10 +1,11 @@
-module foundryinstaller
+module sprout
 
 go 1.24.6
 
 require (
 	github.com/briandowns/spinner v1.23.2
 	github.com/manifoldco/promptui v0.9.0
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
@@ -14,5 +15,4 @@ require (
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	golang.org/x/sys v0.33.0 // indirect
 	golang.org/x/term v0.1.0 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

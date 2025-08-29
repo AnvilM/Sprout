@@ -1,0 +1,69 @@
+pacman:
+  - name: 'cliphist'
+
+  - name: 'grim'
+
+  - name: 'hyprland'
+
+  - name: 'kitty'
+
+  - name: 'less'
+
+  - name: 'rofi'
+
+  - name: 'slurp'
+
+  - name: 'waybar'
+
+  - name: 'ttf-roboto'
+
+  - name: 'ttf-nerd-fonts-symbols-mono'
+
+  - name: 'ttf-jetbrains-mono'
+
+  - name: 'noto-fonts-emoji'
+
+  - name: 'xdg-desktop-portal-hyprland'
+    setupCommands:
+      - 'sudo -u "$SUDO_USER" -i sh -c "systemctl --user enable --now xdg-desktop-portal-hyprland.service"'
+
+  - name: 'pipewire-pulse'
+    setupCommands:
+      - 'sudo -u "$SUDO_USER" -i sh -c "systemctl --user enable --now pipewire pipewire-pulse"'
+
+  - name: 'wireplumber'
+    setupCommands:
+      - 'sudo -u "$SUDO_USER" -i sh -c "systemctl --user enable --now wireplumber"'
+
+  - name: 'networkmanager'
+    setupCommands:
+      - 'systemctl enable --now NetworkManager'
+
+  - name: 'swww'
+    setupCommands:
+      - 'sudo -u "$SUDO_USER" -i sh -c "swww-daemon"'
+
+  - name: 'fish'
+    setupCommands:
+      - 'sudo -u "$SUDO_USER" -i sh -c "chsh -s /usr/bin/fish"'
+
+
+hyprplugins: 
+  - name: 'Hyprspace'
+    repository: 'https://github.com/KZDKM/Hyprspace'
+    buildDependencies:
+      pacman:
+        - name: 'cpio'
+        - name: "cmake"
+        - name: "git"
+        - name: "meson"
+        - name: "gcc"
+
+
+additionalUtils: 
+  - name: 'TinyFetch'
+    buildDependencies:
+      pacman:
+        - name: 'curl'
+    setupCommands:
+      - 'sudo -u "$SUDO_USER" -i sh -c "echo 123"'

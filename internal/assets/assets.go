@@ -1,12 +1,11 @@
-package embedassets
+package assets
 
 import (
 	"embed"
-	"fmt"
 	"io/fs"
 	"os"
-	"os/user"
 	"path/filepath"
+	"sprout/internal/utils/system"
 	"strconv"
 )
 
@@ -15,11 +14,7 @@ import (
 var embeddedFiles embed.FS
 
 func ExtractAssets() error {
-	sudoUser := os.Getenv("SUDO_USER")
-	if sudoUser == "" {
-		return fmt.Errorf("this script must be run with sudo")
-	}
-	u, err := user.Lookup(sudoUser)
+	u, err := system.GetUser()
 	if err != nil {
 		return err
 	}
@@ -33,17 +28,9 @@ func ExtractAssets() error {
 	}
 	home := u.HomeDir
 
-	// Delete existing directories if they exist
-	for _, dirName := range []string{".config", ".themes"} {
-		destDir := filepath.Join(home, dirName)
-		if err := os.RemoveAll(destDir); err != nil {
-			return err
-		}
-	}
-
 	mappings := map[string]string{
 		"assets/.config": filepath.Join(home, ".config"),
-		"assets/.themes":  filepath.Join(home, ".themes"),
+		"assets/.themes": filepath.Join(home, ".themes"),
 	}
 
 	for srcRoot, destRoot := range mappings {
@@ -60,21 +47,22 @@ func ExtractAssets() error {
 			outPath := filepath.Join(destRoot, relPath)
 
 			if d.IsDir() {
+				// Создаём директорию, если её нет
 				if err := os.MkdirAll(outPath, 0755); err != nil {
 					return err
 				}
 				return os.Chown(outPath, uid, gid)
 			}
 
-			// For files
+			// Создаём родительскую директорию на всякий случай
 			if err := os.MkdirAll(filepath.Dir(outPath), 0755); err != nil {
 				return err
 			}
-			// Chown the parent dir (may be redundant but safe)
 			if err := os.Chown(filepath.Dir(outPath), uid, gid); err != nil {
 				return err
 			}
 
+			// Читаем и записываем файл из embed, перезаписывая существующий
 			data, err := embeddedFiles.ReadFile(path)
 			if err != nil {
 				return err
@@ -90,5 +78,6 @@ func ExtractAssets() error {
 			return err
 		}
 	}
+
 	return nil
 }

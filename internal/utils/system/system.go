@@ -1,9 +1,10 @@
 package system
 
 import (
-	"foundryinstaller/internal/utils/logger"
 	"os"
-	"os/exec"
+	"os/user"
+	"sprout/internal/utils/logger"
+	"time"
 )
 
 func CheckSudo() {
@@ -13,15 +14,17 @@ func CheckSudo() {
     }
 }
 
-func RunCommand(command string) error {
-	cmd := exec.Command("bash", "-c", command)
+func GetUser() (*user.User, error){
+	return user.Lookup(os.Getenv("SUDO_USER"))
+}
 
-	cmd.Stdout = nil
-	cmd.Stderr = nil
+func RunCommand(command string) (string, error) {
+	// cmd := exec.Command("sh", "-c", command)
 
-	if err := cmd.Run(); err != nil {
-		return err
-	}
+	// out, err := cmd.CombinedOutput()
 
-	return nil
+	// return string(out), err
+
+	time.Sleep(1 * time.Second)
+	return "", nil
 }

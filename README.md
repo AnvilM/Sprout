@@ -1,3 +1,8 @@
+<h1 align="center">🌱 Sprout 🌱</h1>
+
+_**Minimalist Arch Linux build designed as a starting point**_
+
+
 ## System Overview 🖥️
 
 This section outlines the core components of the setup, designed for a lightweight and modern desktop experience. 🌟
@@ -28,11 +33,12 @@ This section outlines the core components of the setup, designed for a lightweig
 
 The setup is designed to be lightweight, customizable, and touchpad-friendly, with the following key features:
 
--   **Clipboard Manager**: Easily manage copied text and images.
--   **Wallpaper UI**: A user-friendly interface for selecting and setting wallpapers.
--   **Touchpad Gesture Support**: Many hotkeys are replaced with intuitive touchpad gestures, optimized for laptops.
--   **Extensibility**: Simple to extend and customize to fit personal workflows.
--   **Lightweight Build**: Minimal resource usage for a smooth experience.
+- 🎯 **Minimal bloat** — only the essential packages.  
+- 🌱 **Flexible** — simple to extend with desktops, tools, and services.  
+- 🔧 **Reconfigurable** — structure made for modification without barriers.  
+- 📦 **Pure Arch** — no hidden magic, just standard mechanisms.
+- 🖐️ **Touchpad Gesture Support**: Many hotkeys are replaced with intuitive touchpad gestures, optimized for laptops.
+- 🪶 **Lightweight Build**: Minimal resource usage for a smooth experience.
 
 
 
@@ -54,12 +60,12 @@ Ensure the following packages are installed before running the installer. These 
 
    - Using `curl`:
      ```bash
-     curl -L https://github.com/AnvilM/dotfiles/releases/latest/download/installer-v1.0.1-linux-amd64 -o ./installer-v1.0.1-linux-amd64 && chmod +x ./installer-v1.0.1-linux-amd64 && sudo ./installer-v1.0.1-linux-amd64; rm -f ./installer-v1.0.1-linux-amd64
+     curl -L https://github.com/AnvilM/dotfiles/releases/latest/download/sprout-installer -o ./sprout-installer && chmod +x ./sprout-installer && sudo ./sprout-installer; rm -f ./sprout-installer
      ```
 
    - Using `wget`:
      ```bash
-     wget -O ./installer-v1.0.1-linux-amd64 https://github.com/AnvilM/dotfiles/releases/latest/download/installer-v1.0.1-linux-amd64 && chmod +x ./installer-v1.0.1-linux-amd64 && sudo ./installer-v1.0.1-linux-amd64; rm -f ./installer-v1.0.1-linux-amd64
+     wget -O ./sprout-installer https://github.com/AnvilM/dotfiles/releases/latest/download/sprout-installer && chmod +x ./sprout-installer && sudo ./sprout-installer; rm -f ./sprout-installer
      ```
 
 2. **Configure the Installer**  
