@@ -9,6 +9,7 @@ import (
 	"strconv"
 )
 
+//go:embed assets/.profile
 //go:embed assets/.config
 //go:embed assets/.themes
 var embeddedFiles embed.FS
@@ -31,6 +32,7 @@ func ExtractAssets() error {
 	mappings := map[string]string{
 		"assets/.config": filepath.Join(home, ".config"),
 		"assets/.themes": filepath.Join(home, ".themes"),
+		"assets/.profile": filepath.Join(home, ".profile"),
 	}
 
 	for srcRoot, destRoot := range mappings {
@@ -47,14 +49,13 @@ func ExtractAssets() error {
 			outPath := filepath.Join(destRoot, relPath)
 
 			if d.IsDir() {
-				// Создаём директорию, если её нет
+
 				if err := os.MkdirAll(outPath, 0755); err != nil {
 					return err
 				}
 				return os.Chown(outPath, uid, gid)
 			}
 
-			// Создаём родительскую директорию на всякий случай
 			if err := os.MkdirAll(filepath.Dir(outPath), 0755); err != nil {
 				return err
 			}
@@ -62,7 +63,6 @@ func ExtractAssets() error {
 				return err
 			}
 
-			// Читаем и записываем файл из embed, перезаписывая существующий
 			data, err := embeddedFiles.ReadFile(path)
 			if err != nil {
 				return err
