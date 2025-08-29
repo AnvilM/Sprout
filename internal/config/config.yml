@@ -67,3 +67,6 @@ additionalUtils:
         - name: 'curl'
     setupCommands:
       - 'curl -L https://github.com/AnvilM/tinyfetch/releases/latest/download/tinyfetch -o tinyfetch && chmod +x tinyfetch && mv tinyfetch /usr/bin/'
+
+assets:
+  scripts:
