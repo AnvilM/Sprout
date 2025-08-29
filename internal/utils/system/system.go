@@ -2,9 +2,9 @@ package system
 
 import (
 	"os"
+	"os/exec"
 	"os/user"
 	"sprout/internal/utils/logger"
-	"time"
 )
 
 func CheckSudo() {
@@ -19,12 +19,9 @@ func GetUser() (*user.User, error){
 }
 
 func RunCommand(command string) (string, error) {
-	// cmd := exec.Command("sh", "-c", command)
+	cmd := exec.Command("sh", "-c", command)
 
-	// out, err := cmd.CombinedOutput()
+	out, err := cmd.CombinedOutput()
 
-	// return string(out), err
-
-	time.Sleep(1 * time.Second)
-	return "", nil
+	return string(out), err
 }
