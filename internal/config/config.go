@@ -15,6 +15,7 @@ type Config struct {
 	Pacman          []PacmanItem      `yaml:"pacman"`
 	Hyprplugins     []HyprpluginItem  `yaml:"hyprplugins"`
 	AdditionalUtils []AdditionalUtil  `yaml:"additionalUtils"`
+	Assets          *Assets           `yaml:"assets,omitempty"`
 }
 
 type PacmanItem struct {
@@ -37,6 +38,10 @@ type AdditionalUtil struct {
 type BuildDependencies struct {
 	Pacman []PacmanItem `yaml:"pacman,omitempty"`
 	// Future expansion: Aur []AurItem `yaml:"aur,omitempty"`
+}
+
+type Assets struct {
+	Scripts []string `yaml:"scripts,omitempty"`
 }
 
 func GetConfig() *Config {
@@ -93,6 +98,13 @@ func validateConfig(cfg *Config) {
 		}
 		if item.BuildDependencies != nil {
 			validateBuildDependencies(item.BuildDependencies, fmtIndex("additionalUtils", i))
+		}
+	}
+
+	// Assets
+	if cfg.Assets != nil {
+		if cfg.Assets.Scripts != nil && len(cfg.Assets.Scripts) == 0 {
+			logger.Fatal("assets.scripts cannot be empty if defined")
 		}
 	}
 }
