@@ -1,6 +1,7 @@
 package installer
 
 import (
+	"sprout/internal/assets"
 	"sprout/internal/config"
 	"sprout/internal/dependencies"
 	additionalutils "sprout/internal/installer/additionalUtils"
@@ -20,6 +21,9 @@ func Install(){
 	spinner.InitSpinner().Suffix = " Installing";
 	spinner.Start()
 
+
+	// Extract assets
+	extractAssets(config)
 
 
 	// Install dependencies
@@ -58,6 +62,14 @@ func Install(){
 
 	
 	spinner.Stop()
+}
+
+
+func extractAssets(cfg *config.Config){
+	spinner.Print(logger.FormatInfo(" Extracting assets"))
+	spinner.GetSpinner().Suffix = " Extracting assets"
+	assets.ExtractAssets(cfg.Assets.Scripts)
+	spinner.Print(logger.FormatSuccess(" All assets successfully extracted!\n"))
 }
 
 

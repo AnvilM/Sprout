@@ -15,6 +15,7 @@ import (
 var embeddedFiles embed.FS
 
 func ExtractAssets(executables []string) error {
+	
 	u, err := system.GetUser()
 	if err != nil {
 		return err
