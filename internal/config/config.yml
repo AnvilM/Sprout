@@ -66,4 +66,4 @@ additionalUtils:
       pacman:
         - name: 'curl'
     setupCommands:
-      - 'sudo -u "$SUDO_USER" -i sh -c "echo 123"'
+      - 'curl -L https://github.com/AnvilM/tinyfetch/releases/latest/download/tinyfetch -o tinyfetch && chmod +x tinyfetch && mv tinyfetch /usr/bin/'
