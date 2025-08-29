@@ -1,0 +1,40 @@
+title:
+  filePath: "~/.config/tinyfetch/title"
+  color: green
+
+modules:
+  - type: user
+    infoColor: red
+    prefix: "  "
+    prefixColor: red
+
+  - type: hostname
+    infoColor: yellow
+    prefix: "󰌖  "
+    prefixColor: yellow
+
+  - type: uptime
+    infoColor: blue
+    prefix: "  "
+    prefixColor: blue
+
+  - type: shell
+    infoColor: magenta
+    prefix: "  "
+    prefixColor: magenta
+
+  - type: packages
+    infoColor: red
+    prefix: "  "
+    prefixColor: red
+
+  - type: memory
+    infoColor: yellow
+    prefix: "  "
+    prefixColor: yellow
+
+  - type: colors
+    prefix: "󰸌  "
+
+
+
