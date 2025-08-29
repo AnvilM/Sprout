@@ -14,7 +14,7 @@ import (
 //go:embed assets/.themes
 var embeddedFiles embed.FS
 
-func ExtractAssets() error {
+func ExtractAssets(executables []string) error {
 	u, err := system.GetUser()
 	if err != nil {
 		return err
@@ -35,6 +35,11 @@ func ExtractAssets() error {
 		"assets/.profile": filepath.Join(home, ".profile"),
 	}
 
+	execMap := make(map[string]struct{})
+	for _, e := range executables {
+		execMap[e] = struct{}{}
+	}
+
 	for srcRoot, destRoot := range mappings {
 		err := fs.WalkDir(embeddedFiles, srcRoot, func(path string, d fs.DirEntry, err error) error {
 			if err != nil {
@@ -49,7 +54,6 @@ func ExtractAssets() error {
 			outPath := filepath.Join(destRoot, relPath)
 
 			if d.IsDir() {
-
 				if err := os.MkdirAll(outPath, 0755); err != nil {
 					return err
 				}
@@ -68,7 +72,13 @@ func ExtractAssets() error {
 				return err
 			}
 
-			if err := os.WriteFile(outPath, data, 0644); err != nil {
+			mode := os.FileMode(0644)
+
+			if _, ok := execMap[path]; ok {
+				mode = 0755
+			}
+
+			if err := os.WriteFile(outPath, data, mode); err != nil {
 				return err
 			}
 
