@@ -30,6 +30,7 @@
     },
 
     "battery": {
+        "on-update": "~/.rice/notifications/battery/battery.sh",
         "tooltip": false,
         "states": {
             "good": 95,
