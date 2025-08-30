@@ -1,1 +1,0 @@
-export PATH="$HOME/.config/rice/bin:$PATH"

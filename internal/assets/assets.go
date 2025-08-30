@@ -9,7 +9,6 @@ import (
 	"strconv"
 )
 
-//go:embed assets/.profile
 //go:embed assets/.config
 //go:embed assets/.themes
 var embeddedFiles embed.FS
@@ -33,7 +32,6 @@ func ExtractAssets(executables []string) error {
 	mappings := map[string]string{
 		"assets/.config": filepath.Join(home, ".config"),
 		"assets/.themes": filepath.Join(home, ".themes"),
-		"assets/.profile": filepath.Join(home, ".profile"),
 	}
 
 	execMap := make(map[string]struct{})
