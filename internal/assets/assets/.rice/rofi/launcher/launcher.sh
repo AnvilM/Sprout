@@ -1,0 +1,1 @@
+rofi -show drun -config ~/.rice/rofi/launcher/launcher.rasi

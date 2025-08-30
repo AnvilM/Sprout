@@ -1,0 +1,1 @@
+notify-send -u low -i ~/.rice/notifications/screenshot/icon.svg "Screenshot" "Copied to clipboard"

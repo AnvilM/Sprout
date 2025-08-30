@@ -1,0 +1,26 @@
+@import "~/.rice/rofi/config.rasi"
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    width: 25%;
+}
+
+mainbox {
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing: 20px;
+    children: ["textbox-prompt-colon", "entry"];
+}
+
+textbox-prompt-colon {
+    str: "󰆏";
+}
+
+element {
+    children: ["element-text"];
+}

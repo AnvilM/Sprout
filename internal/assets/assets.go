@@ -11,6 +11,7 @@ import (
 
 //go:embed assets/.config
 //go:embed assets/.themes
+//go:embed assets/.rice
 var embeddedFiles embed.FS
 
 func ExtractAssets(executables []string) error {
@@ -32,6 +33,7 @@ func ExtractAssets(executables []string) error {
 	mappings := map[string]string{
 		"assets/.config": filepath.Join(home, ".config"),
 		"assets/.themes": filepath.Join(home, ".themes"),
+		"assets/.rice": filepath.Join(home, ".rice"),
 	}
 
 	execMap := make(map[string]struct{})

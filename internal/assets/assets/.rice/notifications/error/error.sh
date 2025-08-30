@@ -1,0 +1,1 @@
+notify-send -u critical -i ~/.rice/notifications/error/icon_error.svg "Error" "$1"

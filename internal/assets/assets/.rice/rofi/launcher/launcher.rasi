@@ -1,0 +1,22 @@
+@import "~/.rice/rofi/config.rasi"
+
+configuration {
+	modes: "drun";
+	drun-display-format: "{name}";
+}
+
+window {
+    width: 20%;
+}
+
+mainbox {
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing: 20px;
+}
+
+entry {
+    placeholder: "Run...";
+}
