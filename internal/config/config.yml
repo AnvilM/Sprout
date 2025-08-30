@@ -1,6 +1,8 @@
 pacman:
   - name: 'cliphist'
 
+  - name: 'mako'
+
   - name: 'grim'
 
   - name: 'hyprland'
@@ -70,6 +72,16 @@ additionalUtils:
 
 assets:
   scripts:
-    - "assets/.config/rofi/wallpaper/wallpaper.sh"
-    - "assets/.config/rofi/screenshot/screenshot.sh"
-    - "assets/.config/rice/bin/screenshot"
+    # Scripts
+    - "assets/.rice/scripts/screenshot.sh"
+
+    # Rofi
+    - "assets/.rice/rofi/cliphist/cliphist.sh"
+    - "assets/.rice/rofi/launcher/launcher.sh"
+    - "assets/.rice/rofi/screenshot/screenshot.sh"
+    - "assets/.rice/rofi/wallpaper/wallpaper.sh"
+
+    # Notifications
+    - "assets/.rice/notifications/battery/battery.sh"
+    - "assets/.rice/notifications/error/error.sh"
+    - "assets/.rice/notifications/screenshot/screenshot.sh"
