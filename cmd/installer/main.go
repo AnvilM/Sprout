@@ -1,18 +1,13 @@
 package main
 
 import (
-	"os/exec"
-	"fmt"
+	"sprout/internal/installer"
+	"sprout/internal/utils/system"
 )
 
 func main() {
-	command := "echo $SUDO_USER"
-	cmd := exec.Command("sh", "-c", command)
+	 
+	system.CheckSudo()
 
-	out, err := cmd.CombinedOutput()
-
-	fmt.Printf("%s", out)
-	if(err != nil){
-		fmt.Printf("%s", err)
-	}
+	installer.Install()
 }

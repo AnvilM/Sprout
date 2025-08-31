@@ -21,33 +21,36 @@ pacman:
 
   - name: 'ttf-nerd-fonts-symbols-mono'
 
+  - name: 'swww'
+
   - name: 'ttf-jetbrains-mono'
 
   - name: 'noto-fonts-emoji'
 
   - name: 'xdg-desktop-portal-hyprland'
     setupCommands:
-      - 'sudo -u "$SUDO_USER" -i sh -c "systemctl --user enable --now xdg-desktop-portal-hyprland.service"'
+      - command: 'systemctl --user enable --now xdg-desktop-portal-hyprland.service'
+        root: false
 
   - name: 'pipewire-pulse'
     setupCommands:
-      - 'sudo -u "$SUDO_USER" -i sh -c "systemctl --user enable --now pipewire pipewire-pulse"'
+      - command: 'systemctl --user enable --now pipewire pipewire-pulse'
+        root: false
 
   - name: 'wireplumber'
     setupCommands:
-      - 'sudo -u "$SUDO_USER" -i sh -c "systemctl --user enable --now wireplumber"'
+      - command: 'systemctl --user enable --now wireplumber'
+        root: false
 
   - name: 'networkmanager'
     setupCommands:
-      - 'systemctl enable --now NetworkManager'
-
-  - name: 'swww'
-    setupCommands:
-      - 'sudo -u "$SUDO_USER" -i sh -c "swww-daemon"'
+      - command: 'systemctl enable --now NetworkManager'
+        root: true
 
   - name: 'fish'
     setupCommands:
-      - 'sudo -u "$SUDO_USER" -i sh -c "chsh -s /usr/bin/fish"'
+      - command: 'chsh -s /usr/bin/fish $SUDO_USER'
+        root: true
 
 
 hyprplugins: 
@@ -68,7 +71,8 @@ additionalUtils:
       pacman:
         - name: 'curl'
     setupCommands:
-      - 'curl -L https://github.com/AnvilM/tinyfetch/releases/latest/download/tinyfetch -o tinyfetch && chmod +x tinyfetch && mv tinyfetch /usr/bin/'
+      - command: 'curl -L https://github.com/AnvilM/tinyfetch/releases/latest/download/tinyfetch -o tinyfetch && chmod +x tinyfetch && mv tinyfetch /usr/bin/'
+        root: true
     
   - name: 'yay'
     buildDependencies:
@@ -76,9 +80,14 @@ additionalUtils:
         - name: 'git'
         - name: 'base-devel'
     setupCommands:
-      - 'sudo -u "$SUDO_USER" -i sh -c "git clone https://aur.archlinux.org/yay.git"'
-      - 'sudo -u "$SUDO_USER" -i sh -c "makepkg -s -c -i -D ./yay"'
-      - 'rm -rf ./yay'
+      - command: 'git clone "https://aur.archlinux.org/yay.git"'
+        root: false
+
+      - command: 'makepkg -s -c -i -D ./yay'
+        root: true
+
+      - command: 'rm -rf ./yay'
+        root: true
 
 
 assets:

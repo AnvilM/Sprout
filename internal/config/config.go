@@ -20,7 +20,12 @@ type Config struct {
 
 type PacmanItem struct {
 	Name          string   `yaml:"name"`
-	SetupCommands []string `yaml:"setupCommands,omitempty"`
+	SetupCommands []SetupCommand `yaml:"setupCommands,omitempty"`
+}
+
+type SetupCommand struct {
+	Command          string   `yaml:"command"`
+	Root             bool     `yaml:"root"`
 }
 
 type HyprpluginItem struct {
@@ -32,7 +37,7 @@ type HyprpluginItem struct {
 type AdditionalUtil struct {
 	Name              string             `yaml:"name"`
 	BuildDependencies *BuildDependencies `yaml:"buildDependencies,omitempty"`
-	SetupCommands     []string           `yaml:"setupCommands,omitempty"`
+	SetupCommands     []SetupCommand           `yaml:"setupCommands,omitempty"`
 }
 
 type BuildDependencies struct {
