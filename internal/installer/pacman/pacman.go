@@ -14,7 +14,7 @@ func Install(pacman []config.PacmanItem, label string){
 
         spinner.GetSpinner().Suffix = label + pacmanItem.Name
 
-		if _, err := system.RunCommand("sudo pacman -Sy --noconfirm " + pacmanItem.Name); err != nil {
+		if _, err := system.RunCommandAsRoot("pacman -Sy --noconfirm " + pacmanItem.Name); err != nil {
 			logger.Fatal("%s", err)
 		}
 
@@ -32,7 +32,7 @@ func Remove(pacman []config.PacmanItem, label string){
     for _, pacmanItem := range pacman {
         spinner.GetSpinner().Suffix = label + pacmanItem.Name
 
-		if _, err := system.RunCommand("sudo pacman -Rns --noconfirm" + pacmanItem.Name); err != nil {
+		if _, err := system.RunCommandAsRoot("pacman -Rns --noconfirm" + pacmanItem.Name); err != nil {
 			logger.Fatal("%s", err)
 		}
     }

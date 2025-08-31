@@ -21,13 +21,13 @@ func GetUser() (*user.User, error){
 
 func RunCommand(command config.SetupCommand) (string, error){
 	if command.Root {
-		return runCommandAsRoot(command.Command)
+		return RunCommandAsRoot(command.Command)
 	}
 
-	return runCommandAsUser(command.Command)
+	return RunCommandAsUser(command.Command)
 }
 
-func runCommandAsRoot(command string) (string, error) {
+func RunCommandAsRoot(command string) (string, error) {
 	cmd := exec.Command("sh", "-c", command)
 
 	out, err := cmd.CombinedOutput()
@@ -35,8 +35,9 @@ func runCommandAsRoot(command string) (string, error) {
 	return string(out), err
 }
 
-func runCommandAsUser(command string) (string, error) {
-	cmd := exec.Command("sudo", "-i", "-u", GetUser().Username, "sh", "-c", command)
+func RunCommandAsUser(command string) (string, error) {
+	username := os.Getenv("SUDO_USER")
+	cmd := exec.Command("sudo", "-i", "-u", username, "sh", "-c", command)
 
 	out, err := cmd.CombinedOutput()
 
