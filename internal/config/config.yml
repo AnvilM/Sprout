@@ -69,6 +69,17 @@ additionalUtils:
         - name: 'curl'
     setupCommands:
       - 'curl -L https://github.com/AnvilM/tinyfetch/releases/latest/download/tinyfetch -o tinyfetch && chmod +x tinyfetch && mv tinyfetch /usr/bin/'
+    
+  - name: 'yay'
+    buildDependencies:
+      pacman:
+        - name: 'git'
+        - name: 'base-devel'
+    setupCommands:
+      - 'sudo -u "$SUDO_USER" -i sh -c "git clone https://aur.archlinux.org/yay.git"'
+      - 'sudo -u "$SUDO_USER" -i sh -c "makepkg -s -c -i -D ./yay"'
+      - 'rm -rf ./yay'
+
 
 assets:
   scripts:
